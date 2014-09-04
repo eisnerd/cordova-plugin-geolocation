@@ -108,11 +108,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <!-- ios -->
     <platform name="ios">
 
-        <config-file target="*-Info.plist" parent="/*">
-            <key>NSLocationWhenInUseUsageDescription</key>
-            <string></string>
-        </config-file>
-
         <js-module src="www/Coordinates.js" name="Coordinates">
             <clobbers target="Coordinates" />
         </js-module>
@@ -138,7 +133,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <source-file src="src/ios/CDVLocation.m" />
         <framework src="CoreLocation.framework" />
         
-        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+	<config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+	    <string></string>
+	</config-file>
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
             <string></string>
         </config-file>
         
